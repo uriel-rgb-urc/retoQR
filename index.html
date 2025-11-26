@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reto aleatorio</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:#0d1117;color:white;display:flex;align-items:center;justify-content:center;padding:20px}
+    .wrap{max-width:700px;text-align:center}
+    .reto{font-size:28px;padding:20px;border-radius:12px;background:rgba(255,255,255,0.05);margin-bottom:20px}
+    button{padding:12px 18px;border:none;border-radius:8px;background:#ffa500;font-size:16px;font-weight:bold;cursor:pointer;color:#000}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="reto" class="reto">Haz clic abajo para generar un reto</div>
+    <button id="btn">Nuevo reto</button>
+
+  <script>
+    const elReto = document.getElementById('reto');
+    const btn = document.getElementById('btn');
+
+    // Lista de retos, con multiplicidad para controlar frecuencia
+    let listaRetos = [
+      'Haz de modelo',
+      'Hazte una foto con desconocidos',
+      'Di una frase icónica con emoción','Di una frase icónica con emoción',
+      'Canta el estribillo de una canción',
+      'Un brindis por el cumpleañero!','Un brindis por el cumpleañero!',
+      'Haz una pose comprometida para una foto',
+      'Graba un mini video de felicitación','Graba un mini video de felicitación','Graba un mini video de felicitación',
+      'Hazte una foto con el cumpleañero',
+      'Sácate una foto imitando una escena icónica',
+      'Haz una entrada triunfal',
+      'Grabad una escena en cámara lenta',
+      'Cuenta un storytime divertido del cumpleañero',
+      'Cambia una prenda con alguien'
+    ];
+
+    function nuevoReto(){
+      const r = listaRetos[Math.floor(Math.random()*listaRetos.length)];
+      elReto.textContent = r;
+    }
+
+    btn.addEventListener('click', nuevoReto);
+  </script>
+</body>
+</html>
